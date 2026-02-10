@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .links {
+            margin-top: 3rem;
+        }
+
+        .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1rem;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .links a:hover {
+            border-bottom-color: white;
+        }
+
+        .status {
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .tagline {
+                font-size: 1.1rem;
+            }
+            .links a {
+                display: block;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Charlie Ivancic</h1>
+        <p class="tagline">Marketing professional specializing in strategy & operations.</p>
+        
+        <div class="links">
+            <a href="mailto:charlieivancic@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/charlieivancic/" target="_blank">LinkedIn</a>
+        </div>
+        
+        <p class="status">Portfolio coming soon.</p>
+    </div>
+</body>
+</html>
