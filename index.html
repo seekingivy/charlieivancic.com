@@ -1,104 +1,792 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon | Your Name</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Charlie Ivancic - Digital Marketing Professional</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			/* Reset and Base Styles */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: white;
-        }
+			html {
+				scroll-behavior: smooth;
+			}
 
-        .container {
-            text-align: center;
-            max-width: 600px;
-            animation: fadeIn 1s ease-in;
-        }
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				line-height: 1.6;
+				color: #000;
+				background-color: #faf8f6;
+			}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+			.wrapper {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            letter-spacing: -1px;
-        }
+			/* Header */
+			header {
+				text-align: center;
+				padding: 40px 20px 30px;
+				background-color: #faf8f6;
+			}
 
-        .tagline {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
+			.header-logo {
+				width: 120px;
+				height: 120px;
+				background-color: #4a7c6b;
+				border-radius: 50%;
+				margin: 0 auto 20px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-size: 2em;
+				font-weight: bold;
+				overflow: hidden;
+			}
 
-        .links {
-            margin-top: 3rem;
-        }
+			.header-logo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 
-        .links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1rem;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
-            display: inline-block;
-        }
+			header h1 {
+				font-size: 2.5em;
+				margin-bottom: 0.1em;
+				font-weight: 700;
+			}
 
-        .links a:hover {
-            border-bottom-color: white;
-        }
+			header .title {
+				font-size: 1.1em;
+				color: #333;
+				margin-bottom: 0.5em;
+			}
 
-        .status {
-            margin-top: 4rem;
-            font-size: 0.95rem;
-            opacity: 0.8;
-            font-weight: 300;
-        }
+			header p {
+				font-size: 1em;
+				max-width: 700px;
+				margin: 0 auto;
+				color: #333;
+			}
 
-        /* Mobile responsive */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .tagline {
-                font-size: 1.1rem;
-            }
-            .links a {
-                display: block;
-                margin: 15px 0;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Charlie Ivancic</h1>
-        <p class="tagline">Marketing professional specializing in strategy & operations.</p>
-        
-        <div class="links">
-            <a href="mailto:charlieivancic@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/charlieivancic/" target="_blank">LinkedIn</a>
-        </div>
-        
-        <p class="status">Portfolio coming soon.</p>
-    </div>
-</body>
+			/* Navigation - Sticky with scale animation */
+			#nav {
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+				background-color: rgba(250, 248, 246, 0.95);
+				backdrop-filter: blur(10px);
+				padding: 1.5em 0;
+				transition: all 0.4s ease;
+				margin-bottom: 20px;
+				box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+			}
+
+			#nav.scrolled {
+				padding: 0.75em 0;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+			}
+
+			.nav-container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 2em;
+				flex-wrap: wrap;
+			}
+
+			.nav-logo {
+				width: 50px;
+				height: 50px;
+				background-color: #4a7c6b;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: bold;
+				color: white;
+				font-size: 1.2em;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+				flex-shrink: 0;
+				overflow: hidden;
+			}
+
+			.nav-logo img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			#nav.scrolled .nav-logo {
+				opacity: 1;
+			}
+
+			#nav ul {
+				list-style: none;
+				display: flex;
+				justify-content: center;
+				gap: 1.5em;
+				margin: 0;
+				padding: 0;
+				flex-wrap: wrap;
+			}
+
+			#nav li {
+				display: inline-block;
+			}
+
+			#nav a {
+				text-decoration: none;
+				color: #4a7c6b;
+				font-weight: 600;
+				font-size: 0.85em;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				transition: color 0.3s;
+				padding: 0.5em 0.75em;
+				display: block;
+				position: relative;
+				white-space: nowrap;
+			}
+
+			#nav a::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0.75em;
+				width: 0;
+				height: 2px;
+				background-color: #4a7c6b;
+				transition: width 0.3s ease;
+			}
+
+			#nav a:hover::after,
+			#nav a.active::after {
+				width: calc(100% - 1.5em);
+			}
+
+			#nav a:hover,
+			#nav a.active {
+				color: #2d5145;
+			}
+
+			/* Main Content */
+			main {
+				padding: 0 20px 40px;
+			}
+
+			section {
+				margin-bottom: 40px;
+				scroll-margin-top: 100px;
+			}
+
+			.content-box {
+				background-color: #ffffff;
+				padding: 50px 40px;
+				border-radius: 8px;
+				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+			}
+
+			h2 {
+				font-size: 2.2em;
+				margin-bottom: 0.5em;
+				color: #4a7c6b;
+			}
+
+			.section-intro {
+				max-width: 700px;
+				margin: 0 auto 40px;
+				font-size: 1em;
+				color: #333;
+			}
+
+			/* About Section */
+			.about-content {
+				display: flex;
+				gap: 40px;
+				align-items: flex-start;
+			}
+
+			.headshot {
+				width: 200px;
+				height: 200px;
+				background-color: #f0ebe6;
+				border-radius: 50%;
+				flex-shrink: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #999;
+				font-size: 0.9em;
+				overflow: hidden;
+			}
+
+			.headshot img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.about-text h2 {
+				font-size: 2.2em;
+				margin-bottom: 0.5em;
+			}
+
+			.about-text p {
+				font-size: 1em;
+				line-height: 1.8;
+				color: #333;
+			}
+
+			/* Projects Section */
+			.projects-header {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.projects-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 30px;
+			}
+
+			.project-card {
+				background-color: #ffffff;
+				padding: 30px 25px;
+				border-radius: 8px;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s, box-shadow 0.3s;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.project-card:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 12px 40px rgba(74, 124, 107, 0.25);
+			}
+
+			.project-icon {
+				width: 120px;
+				height: 120px;
+				background-color: #f0ebe6;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 1.5em;
+				color: #4a7c6b;
+				font-size: 2.5em;
+				flex-shrink: 0;
+				overflow: hidden;
+			}
+
+			.project-icon img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.project-card h3 {
+				font-size: 1.2em;
+				margin-bottom: 0.5em;
+				color: #000;
+				line-height: 1.3;
+			}
+
+			.project-card p {
+				color: #555;
+				margin-bottom: 1.5em;
+				flex-grow: 1;
+				font-size: 0.9em;
+				line-height: 1.7;
+			}
+
+			.project-card a {
+				display: inline-block;
+				padding: 8px 20px;
+				background-color: #4a7c6b;
+				color: #fff;
+				text-decoration: none;
+				border-radius: 4px;
+				font-weight: 500;
+				font-size: 0.9em;
+				transition: background-color 0.3s;
+				text-align: center;
+			}
+
+			.project-card a:hover {
+				background-color: #2d5145;
+			}
+
+			/* Skills Section */
+			.skills-header {
+				text-align: center;
+				margin-bottom: 40px;
+			}
+
+			.skills-intro {
+				max-width: 800px;
+				margin: 0 auto 40px;
+				font-size: 1em;
+				color: #333;
+				text-align: center;
+			}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 30px;
+				margin-bottom: 40px;
+			}
+
+			.skill-card {
+				text-align: center;
+			}
+
+			.skill-icon {
+				width: 100px;
+				height: 100px;
+				background-color: #f0ebe6;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 auto 20px;
+				color: #4a7c6b;
+				font-size: 2.5em;
+				overflow: hidden;
+			}
+
+			.skill-icon img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			.skill-card h3 {
+				font-size: 1.1em;
+				margin-bottom: 10px;
+				color: #000;
+			}
+
+			.skill-card p {
+				color: #555;
+				font-size: 0.9em;
+				line-height: 1.6;
+			}
+
+			.skills-outro {
+				max-width: 800px;
+				margin: 0 auto;
+				font-size: 1em;
+				color: #333;
+				text-align: center;
+			}
+
+			/* Footer / Contact Section */
+			footer {
+				background-color: #4a7c6b;
+				color: #ffffff;
+				padding: 50px 40px 40px;
+				text-align: center;
+				border-radius: 8px;
+				box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+			}
+
+			footer h2 {
+				font-size: 1.8em;
+				margin-bottom: 25px;
+				color: #ffffff;
+			}
+
+			.contact-info {
+				max-width: 600px;
+				margin: 0 auto 25px;
+			}
+
+			.contact-info p {
+				font-size: 1em;
+				margin-bottom: 8px;
+				color: #ffffff;
+			}
+
+			.contact-info a {
+				color: #e8dfd8;
+				text-decoration: none;
+				font-weight: 500;
+			}
+
+			.contact-info a:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+
+			.social-links {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				margin-top: 25px;
+			}
+
+			.social-links a {
+				color: #ffffff;
+				font-size: 1.3em;
+				transition: color 0.3s;
+			}
+
+			.social-links a:hover {
+				color: #e8dfd8;
+			}
+
+			.copyright {
+				margin-top: 30px;
+				font-size: 0.85em;
+				color: rgba(255, 255, 255, 0.7);
+			}
+
+			.copyright a {
+				color: #e8dfd8;
+			}
+
+			/* Mobile Responsiveness */
+			@media (max-width: 968px) {
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.skills-grid {
+					grid-template-columns: 1fr;
+				}
+
+				.about-content {
+					flex-direction: column;
+					align-items: center;
+					text-align: center;
+				}
+			}
+
+			@media (max-width: 768px) {
+				header h1 {
+					font-size: 1.8em;
+				}
+
+				header .title {
+					font-size: 0.95em;
+				}
+
+				header p {
+					font-size: 0.9em;
+				}
+
+				h2 {
+					font-size: 1.8em;
+				}
+
+				.content-box {
+					padding: 30px 20px;
+				}
+
+				.header-logo {
+					width: 100px;
+					height: 100px;
+					font-size: 1.5em;
+					margin-bottom: 15px;
+				}
+
+				/* Mobile: Logo HIDDEN on load, only visible on scroll */
+				.nav-logo {
+					display: none;
+				}
+
+				#nav.scrolled .nav-logo {
+					display: flex;
+					opacity: 1;
+				}
+
+				/* Nav stays horizontal and centered on mobile */
+				.nav-container {
+					gap: 1em;
+					justify-content: center;
+				}
+
+				#nav ul {
+					gap: 0.8em;
+					justify-content: center;
+				}
+
+				#nav a {
+					font-size: 0.7em;
+					padding: 0.4em 0.5em;
+				}
+
+				#nav a::after {
+					left: 0.5em;
+				}
+
+				/* Tighter nav */
+				#nav {
+					padding: 0.75em 0;
+					margin-bottom: 15px;
+				}
+
+				#nav.scrolled {
+					padding: 0.75em 0;
+				}
+
+				section {
+					margin-bottom: 30px;
+				}
+
+				.project-card {
+					padding: 25px 20px;
+				}
+
+				.headshot {
+					width: 150px;
+					height: 150px;
+				}
+
+				.about-content {
+					gap: 20px;
+				}
+
+				.projects-grid {
+					gap: 20px;
+				}
+
+				.skills-grid {
+					gap: 20px;
+				}
+
+				footer {
+					padding: 40px 25px 30px;
+				}
+
+				footer h2 {
+					font-size: 1.5em;
+					margin-bottom: 20px;
+				}
+
+				.contact-info p {
+					font-size: 0.95em;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header -->
+		<header id="header">
+			<!-- LOGO: Upload a SQUARE image and it will crop to circle -->
+			<div class="header-logo">
+				<img src="images/logo.png" alt="CI Logo">
+			</div>
+
+			<h1>Charlie Ivancic</h1>
+			<p class="title">Digital Marketing Professional</p>
+			<p>Building systems and processes that turn marketing data into operational efficiency</p>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<div class="nav-container">
+				<!-- NAV LOGO: Hidden on mobile load, fades in on scroll -->
+				<div class="nav-logo">
+					<img src="images/logo.png" alt="CI Logo">
+				</div>
+
+				<ul>
+					<li><a href="#about" class="active">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- Main -->
+		<main class="wrapper">
+			<!-- About Section -->
+			<section id="about">
+				<div class="content-box">
+					<div class="about-content">
+						<!-- HEADSHOT: Upload a SQUARE image and it will crop to circle -->
+						<div class="headshot">
+							<!-- To use image: uncomment below and update path -->
+							<img src="images/headshot.jpg" alt="Charlie Ivancic headshot"> 
+						</div>
+
+						<div class="about-text">
+							<h2>Lorem Ipsum Dolor Sit Amet</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Projects Section -->
+			<section id="projects">
+				<div class="projects-header">
+					<h2>Featured Projects</h2>
+					<p class="section-intro">Strategic approaches to documentation, data visualization, and operational efficiency</p>
+				</div>
+				
+				<div class="projects-grid">
+					<!-- PROJECT 1 -->
+					<div class="project-card">
+						<!-- ICON: Font Awesome icon (change the class after fa-) -->
+						<!-- Browse: https://fontawesome.com/icons -->
+						<div class="project-icon">
+							<i class="fas fa-chart-line"></i>
+							<!-- Or upload SQUARE image -->
+							<!-- <img src="images/project-1.jpg" alt="Visualizing Documentation"> -->
+						</div>
+						<h3>Visualizing Documentation</h3>
+						<p>Making meaningful maps from a mess of processes—transforming static documentation into living, navigable systems using visual design tools.</p>
+						<a href="project-visualizing.html">Read More</a>
+					</div>
+
+					<!-- PROJECT 2 -->
+					<div class="project-card">
+						<!-- ICON: Font Awesome icon -->
+						<div class="project-icon">
+							<i class="fas fa-chart-pie"></i>
+							<!-- Or upload SQUARE image -->
+							<!-- <img src="images/project-2.jpg" alt="Dashboard Design Principles"> -->
+						</div>
+						<h3>Dashboard Design Principles</h3>
+						<p>Turning data into decisions—creating dashboards that serve diverse stakeholders with clarity and actionable insights.</p>
+						<a href="project-dashboards.html">Read More</a>
+					</div>
+
+					<!-- PROJECT 3 -->
+					<div class="project-card">
+						<!-- ICON: Font Awesome icon -->
+						<div class="project-icon">
+							<i class="fas fa-layer-group"></i>
+							<!-- Or upload SQUARE image -->
+							<!-- <img src="images/project-3.jpg" alt="Reduce, Reuse, Template"> -->
+						</div>
+						<h3>Reduce, Reuse, Template</h3>
+						<p>How reusable frameworks save time and reduce errors—building flexible templates that streamline operations without sacrificing adaptability.</p>
+						<a href="project-templates.html">Read More</a>
+					</div>
+				</div>
+			</section>
+
+			<!-- Skills Section -->
+			<section id="skills">
+				<div class="content-box">
+					<div class="skills-header">
+						<h2>Skills & Expertise</h2>
+					</div>
+
+					<p class="skills-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+					<div class="skills-grid">
+						<!-- SKILL 1 -->
+						<div class="skill-card">
+							<!-- ICON: Font Awesome icon -->
+							<div class="skill-icon">
+								<i class="fas fa-database"></i>
+								<!-- Or upload SQUARE image -->
+								<!-- <img src="images/icon-data.jpg" alt="Data Analysis"> -->
+							</div>
+							<h3>Data Analysis</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+						</div>
+
+						<!-- SKILL 2 -->
+						<div class="skill-card">
+							<!-- ICON: Font Awesome icon -->
+							<div class="skill-icon">
+								<i class="fas fa-cogs"></i>
+								<!-- Or upload SQUARE image -->
+								<!-- <img src="images/icon-process.jpg" alt="Process Optimization"> -->
+							</div>
+							<h3>Process Optimization</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+						</div>
+
+						<!-- SKILL 3 -->
+						<div class="skill-card">
+							<!-- ICON: Font Awesome icon -->
+							<div class="skill-icon">
+								<i class="fas fa-robot"></i>
+								<!-- Or upload SQUARE image -->
+								<!-- <img src="images/icon-automation.jpg" alt="Marketing Automation"> -->
+							</div>
+							<h3>Marketing Automation</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+						</div>
+					</div>
+
+					<p class="skills-outro">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+			</section>
+
+			<!-- Contact Section -->
+			<section id="contact">
+				<footer>
+					<h2>Get In Touch</h2>
+					<div class="contact-info">
+						<p><strong>Email:</strong> <a href="mailto:charlieivancic@gmail.com">charlieivancic@gmail.com</a></p>
+						<p><strong>Location:</strong> Chicago, IL</p>
+					</div>
+					
+					<div class="social-links">
+						<a href="https://www.linkedin.com/in/charlieivancic/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+					</div>
+
+					<p class="copyright">&copy; 2026 Charlie Ivancic. Design adapted from <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+			</section>
+		</main>
+
+		<!-- Scroll behavior script -->
+		<script>
+			const sections = document.querySelectorAll('section[id]');
+			const navLinks = document.querySelectorAll('#nav a');
+			const nav = document.getElementById('nav');
+
+			window.addEventListener('scroll', () => {
+				// Add scrolled class to nav when user scrolls past 100px
+				if (window.scrollY > 100) {
+					nav.classList.add('scrolled');
+				} else {
+					nav.classList.remove('scrolled');
+				}
+
+				// Track active section
+				let current = '';
+				sections.forEach(section => {
+					const sectionTop = section.offsetTop;
+					const sectionHeight = section.clientHeight;
+					if (scrollY >= (sectionTop - 150)) {
+						current = section.getAttribute('id');
+					}
+				});
+
+				navLinks.forEach(link => {
+					link.classList.remove('active');
+					if (link.getAttribute('href') === `#${current}`) {
+						link.classList.add('active');
+					}
+				});
+			});
+		</script>
+	</body>
 </html>
